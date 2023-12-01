@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pack1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
+
+            <RelativeLayout
+                android:id="@+id/Relative1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                tools:ignore="MissingConstraints">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="20dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/imageView5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toTopOf="@+id/guideline2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/myImageViewFirst"
+                                android:layout_width="match_parent"
+                                android:layout_height="110dp"
+                                android:scaleType="fitXY"
+                                tools:layout_editor_absoluteX="0dp"
+                                tools:layout_editor_absoluteY="-5dp" />
+
+                            <TextView
+                                android:id="@+id/plan_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignStart="@+id/myImageViewFirst"
+                                android:layout_alignTop="@+id/myImageViewFirst"
+                                android:layout_alignEnd="@+id/myImageViewFirst"
+                                android:layout_alignBottom="@+id/myImageViewFirst"
+                                android:gravity="center_vertical"
+                                android:paddingTop="10dp"
+                                android:text="Bronze Plan"
+                                android:textColor="#ffff"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="@+id/guideline_bann" />
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/guideline"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                app:layout_constraintGuide_percent="0.50" />
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/guideline_bannerFirst"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent="0.95" />
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/guideline_bann"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent="0.04761905" />
+
+                            <TextView
+                                android:id="@+id/validity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="1dp"
+                                android:layout_marginStart="12dp"
+                                android:gravity="left"
+                                android:text="6 Months"
+                                android:textColor="#ffff"
+                                android:textSize="16dp"
+                                app:layout_constraintStart_toStartOf="@+id/guideline_bann"
+                                app:layout_constraintTop_toBottomOf="@+id/plan_name" />
+
+                            <TextView
+                                android:id="@+id/amount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignLeft="@+id/myImageViewFirst"
+                                android:layout_alignTop="@+id/myImageViewFirst"
+                                android:layout_alignRight="@+id/myImageViewFirst"
+                                android:layout_alignBottom="@+id/myImageViewFirst"
+                                android:layout_margin="1dp"
+                                android:layout_marginTop="8dp"
+                                android:gravity="right"
+                                android:text="₹1,550/-"
+                                android:textColor="#ffff"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                android:typeface="normal"
+                                app:layout_constraintEnd_toStartOf="@+id/guideline_bannerFirst"
+                                app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+                            <TextView
+                                android:id="@+id/gst"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignLeft="@+id/myImageViewFirst"
+                                android:layout_alignTop="@+id/myImageViewFirst"
+                                android:layout_alignRight="@+id/myImageViewFirst"
+                                android:layout_alignBottom="@+id/myImageViewFirst"
+                                android:layout_margin="1dp"
+                                android:gravity="right"
+                                android:text="Per user inclusive of GST"
+                                android:textColor="#ffff"
+                                android:textSize="12dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/myImageViewFirst"
+                                app:layout_constraintEnd_toStartOf="@+id/guideline_bannerFirst"
+                                app:layout_constraintTop_toBottomOf="@+id/amount"
+                                app:layout_constraintVertical_bias="0.0" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_percent="0.22" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.02" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.15" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.50" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_percent="0.25" />
+
+                        <LinearLayout
+                            android:id="@+id/mainLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+                            app:layout_constraintStart_toStartOf="@+id/guideline3"
+                            app:layout_constraintTop_toBottomOf="@+id/guideline6">
+
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/childRecyclerView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:orientation="vertical"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                tools:itemCount="3"
+                                tools:listitem="@layout/item_details_doctor" />
+
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/roundbuttonbuynow"
+                android:foreground="?attr/selectableItemBackground"
+                android:paddingTop="2dp"
+                android:textAllCaps="false"
+                app:cardCornerRadius="30dp"
+                app:layout_constraintBottom_toBottomOf="@+id/Relative1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buyPackage"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bronzeplan"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:paddingTop="2dp"
+                    android:text="Buy Now"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    tools:ignore="MissingConstraints" />
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

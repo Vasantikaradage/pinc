@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="9"
+            android:layout_height="wrap_content"
+            android:text="Wellness User Agreement"
+            android:textColor="#000000"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_gravity="center"
+            android:textSize="18dp"/>
+
+        <ImageView
+            android:id="@+id/closeImg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_close" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkBoxBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="I agree to "/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/buyNowTermsCondition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/btn_terms_use"
+            android:textColor="@color/claimsSuccess" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/buyNowUserAgeConfirmBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Confirm"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:padding="4dp"
+        android:textColor="#ffffff"
+        android:background="@drawable/back_grad_wellness"
+        />
+</LinearLayout>

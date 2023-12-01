@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:id="@+id/bottomSheet"
+    android:paddingBottom="24dp"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="54dp"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    tools:shownIn="@layout/activity_trained_attend">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:isScrollContainer="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Add Address"
+                    android:textColor="@color/cpb_black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_close"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/ic_close"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/textView">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:paddingLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Mobile No"
+                        android:textColor="@color/greenlightbg2"
+                        android:textSize="16dp"/>
+
+<!--                    <com.google.android.material.textfield.TextInputLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:paddingLeft="10dp">-->
+
+                        <EditText
+                            android:id="@+id/etmobileno"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/edittext_background"
+                            android:digits="0123456789"
+                            android:fontFamily="@font/poppins_regular"
+                            android:inputType="number"
+                            android:maxLength="10"/>
+<!--                    </com.google.android.material.textfield.TextInputLayout>-->
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:paddingLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:text="E-Mail ID"
+                        android:textColor="@color/greenlightbg2"
+                        android:textSize="16dp"/>
+
+<!--                    <com.google.android.material.textfield.TextInputLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:paddingLeft="10dp">-->
+
+                        <EditText
+                            android:id="@+id/etemailid"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/edittext_background"
+                            android:layout_marginBottom="5dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:inputType="textEmailAddress" />
+<!--                    </com.google.android.material.textfield.TextInputLayout>-->
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:paddingLeft="10dp"
+                        android:text="Flat/House No/Street"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/greenlightbg2"
+                        android:textSize="16dp"/>
+
+<!--                    <com.google.android.material.textfield.TextInputLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:fontFamily="@font/poppins_regular"-->
+<!--                        android:paddingLeft="10dp">-->
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etflatno"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/edittext_background"
+                            android:fontFamily="@font/poppins_regular"
+                            android:inputType="textCapWords" />
+
+<!--                    </com.google.android.material.textfield.TextInputLayout>-->
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:paddingLeft="10dp"
+                        android:text="Area/Locality"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/greenlightbg2"
+                        android:textSize="16dp"/>
+
+<!--                    <com.google.android.material.textfield.TextInputLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:paddingLeft="10dp"-->
+<!--                        android:textSize="11dp">-->
+
+                        <EditText
+                            android:id="@+id/etlocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:background="@drawable/edittext_background"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginLeft="10dp"
+                            android:inputType="textCapWords" />
+
+<!--                    </com.google.android.material.textfield.TextInputLayout>-->
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:paddingLeft="10dp"
+                        android:text="Landmark"
+                        android:textColor="@color/greenlightbg2"
+                        android:textSize="16dp"/>
+
+<!--                    <com.google.android.material.textfield.TextInputLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:paddingLeft="10dp">-->
+
+                        <EditText
+                            android:id="@+id/etlandmark"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/edittext_background"
+                            android:fontFamily="@font/poppins_regular"
+                            android:inputType="textCapWords" />
+
+<!--                    </com.google.android.material.textfield.TextInputLayout>-->
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="State"
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/greenlightbg2"
+                        android:textSize="16dp"/>
+                    <!--<EditText
+                        android:id="@+id/etState"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/edittext_background"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="14dp"
+                        android:inputType="textCapWords" />-->
+                        <Spinner
+                            android:id="@+id/spinnerState"
+                            android:layout_width="match_parent"
+                            android:layout_height="38dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/spinner_background"
+                            android:focusable="true"
+                            android:fontFamily="@font/poppins_regular" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:paddingLeft="10dp"
+                            android:text="City"
+                            android:layout_weight="1"
+                            android:textSize="16dp"
+                            android:textColor="@color/greenlightbg2" />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:paddingLeft="20dp"
+                            android:text="Pincode"
+                            android:layout_weight="1"
+                            android:textSize="16dp"
+                            android:textColor="@color/greenlightbg2" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                            <!--<Spinner
+                                android:id="@+id/spinnerCity"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:background="@drawable/spinner_background"
+                                android:focusable="true"
+                                android:fontFamily="@font/poppins_regular" />-->
+
+                        <!--<com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingLeft="10dp"
+                            android:textSize="11dp">
+
+                            <EditText
+                                android:id="@+id/etCity"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:background="@drawable/edittext_background"
+                                android:fontFamily="@font/poppins_regular"
+                                android:paddingLeft="10dp"
+                                android:textSize="14dp" />
+                        </com.google.android.material.textfield.TextInputLayout>-->
+                       <FrameLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_weight="1">
+                        <Spinner
+                            android:id="@+id/spinnerCity"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/spinner_background"
+                            android:focusable="true"
+                            android:fontFamily="@font/poppins_regular" />
+                       </FrameLayout>
+<!--                        <com.google.android.material.textfield.TextInputLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:paddingLeft="10dp"-->
+<!--                            android:textSize="11dp">-->
+
+                            <EditText
+                                android:id="@+id/etpincode"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/edittext_background"
+                                android:digits="0123456789"
+                                android:fontFamily="@font/poppins_regular"
+                                android:inputType="number"
+                                android:maxLength="6"
+                                android:paddingLeft="10dp"
+                                android:layout_weight="1"/>
+
+<!--                        </com.google.android.material.textfield.TextInputLayout>-->
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/chkAgreeTerms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/cardBottomMargin"
+                        android:textSize="16dp"
+                        android:textColor="@color/grey1"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="I agree to terms of use" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/btnsaveupdateaddress"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:paddingTop="2dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Save Address"
+                android:background="@drawable/btn_backgroundwellness"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:gravity="center"
+                tools:ignore="MissingPrefix" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

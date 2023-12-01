@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".wellness.healthcheckup.HealthCheckupFragment"
+    android:background="@color/milkywhite">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminateTint="@color/greenlightbg2" />
+
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/overviewButtons"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible">
+
+            <!--  android:background="@drawable/top_grad"-->
+            <Button
+                android:id="@+id/btnOverview"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/roundedsquare_green"
+                android:gravity="center"
+                android:text="Overview"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnPreTest"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/roundedsquare_green"
+                android:gravity="center"
+                android:text="Pre-Test\nreq."
+                android:singleLine="false"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginTop="-6dp"/>
+
+            <Button
+                android:id="@+id/btnTandC"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/roundedsquare_green"
+                android:gravity="center"
+                android:text="T&amp;C"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/packageRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_package" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+<!--    </ScrollView>-->
+
+    <RelativeLayout
+        android:id="@+id/rlcartlayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/backgreen"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/tvitemcount"
+            fontPath="font/arial.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:text="0 Items"
+            android:textColor="@color/textcolorwhite"
+            android:textSize="18sp"
+            tools:ignore="MissingPrefix" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="1dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/tvitemcount"
+            android:background="@color/white" />
+
+        <TextView
+            android:id="@+id/tvtotalamount"
+            fontPath="font/arial.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/view"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:text="₹ 0"
+            android:textColor="@color/textcolorwhite"
+            android:textSize="18sp"
+            tools:ignore="MissingPrefix" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tvviewcart"
+            android:src="@drawable/summary" />
+
+        <TextView
+            android:id="@+id/tvviewcart"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center_vertical"
+            android:text="VIEW CART"
+            android:textColor="@color/textcolorwhite"
+            android:textSize="18sp"
+            tools:ignore="MissingPrefix" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/message_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:text="Himanshu"
+        android:textColor="@color/dark_grey" />
+
+</RelativeLayout>

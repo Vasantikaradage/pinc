@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeHealthSummaryFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="30dp"
+            android:background="@color/white"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="@dimen/card_elevation">
+
+
+            <LinearLayout
+                android:id="@+id/main_cardLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:id="@+id/locationLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvLabelLocation"
+                        style="@style/WellnessTextViewAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Selected Location" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtCityName"
+                        style="@style/WellnessTextViewAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="end"
+                        android:text="Delhi"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view6"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_grey" />
+
+                <LinearLayout
+                    android:id="@+id/personInfoLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/label1"
+                        style="@style/WellnessTextViewAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Package for" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtDependantName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/dark_grey1"
+                        android:textSize="14sp"
+                        tools:text="Mr. ABC XYZ" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+
+                        android:id="@+id/txtRelationAge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/dark_grey1"
+                        android:textSize="14sp"
+                        android:visibility="visible"
+                        tools:text="Self (45 years)" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/dark_grey1"
+                        android:textSize="14sp"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="@+id/txtRelationAge"
+                        app:layout_constraintTop_toBottomOf="@+id/txtRelationAge"
+                        tools:text="Address: 421, blg no 100, Nehur nagar, " />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtAddress1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/dark_grey1"
+                        android:textSize="14sp"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="@+id/txtAddress"
+                        app:layout_constraintTop_toBottomOf="@+id/txtAddress"
+                        tools:text="Kurla east, Mumbai - 24,Maharashtra." />
+
+                    <LinearLayout
+                        android:id="@+id/dateLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtPackageTitle"
+                            style="@style/WellnessTextViewAppearance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Selected Date" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtDuration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="end"
+                            android:textColor="@color/dark_grey1"
+                            android:textSize="14sp"
+                            tools:text="03-06-2021" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_grey" />
+
+                <LinearLayout
+                    android:id="@+id/packageDetailsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtTitle"
+                        style="@style/WellnessTextViewAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Package" />
+
+                    <LinearLayout
+                        android:id="@+id/categoryLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/catLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Category"
+                            android:textColor="@color/dark_grey1" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtCatValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:scrollHorizontally="false"
+                            android:textColor="@color/dark_grey1"
+                            tools:text="Classic" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/HoursLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/HourLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Hours"
+                            android:textColor="@color/dark_grey1" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/hourValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:scrollHorizontally="false"
+                            android:textColor="@color/dark_grey1"
+                            tools:text="12 Hours" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/durationLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/durationLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Duration"
+                            android:textColor="@color/dark_grey1" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/durationValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:scrollHorizontally="false"
+                            android:textColor="@color/dark_grey1"
+                            tools:text="Monthly" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/nursingCountLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/nursingCountLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Nursing Attendant"
+                            android:textColor="@color/dark_grey1" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/nursingCountValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:scrollHorizontally="false"
+                            android:textColor="@color/dark_grey1"
+                            tools:text="1" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_grey"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <LinearLayout
+                    android:id="@+id/packageRateLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtRateLabel"
+                        style="@style/WellnessTextViewAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Package Rate "
+                        android:textColor="@color/rate" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textPackageRate"
+                        fontPath="font/arial.ttf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="-"
+                        android:textColor="@color/rate" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/viewline"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_grey" />
+
+                <LinearLayout
+                    android:id="@+id/packageDurationLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtNoMonthLabel"
+                        style="@style/WellnessTextViewAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="No. of Months"
+                        android:textColor="@color/total" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtNoMonthValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="end"
+                        android:text="-"
+                        android:textColor="@color/total"
+                        tools:text="1" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_grey" />
+
+                <LinearLayout
+                    android:id="@+id/packageTotalLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtTotal"
+                        style="@style/WellnessTextViewAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/cardMargin"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Total"
+                        android:textColor="@color/rate" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textTotalAmount"
+                        fontPath="font/arial.ttf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif"
+                        android:gravity="end"
+                        android:text="-"
+                        android:textColor="@color/rate"
+                        app:fontFamily="sans-serif"
+                        android:layout_marginTop="7dp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_grey"
+                    android:layout_marginTop="5dp"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/gstLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/summery_gst_bg"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="  (Includes applicable GST)"
+                        android:textColor="@color/greenlightbg2"
+                        android:textSize="14sp"
+                        android:textStyle="italic"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <EditText
+                    android:id="@+id/remarkEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/edittext_background"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Add remarks(if any)"
+                    android:padding="10dp"
+                    android:textSize="15sp" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSchedule"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/roundedsquare_green"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Confirm Now"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</ScrollView>

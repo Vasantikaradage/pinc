@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/wellness_nav_graph"
+    app:startDestination="@id/wellnessHomeFragment">
+
+    <fragment
+        android:id="@+id/wellnessHomeFragment"
+        android:name="com.pinc.android.MB360.wellness.fragment.WellnessHomeFragment"
+        android:label=""
+        tools:layout="@layout/fragment_wellness_home">
+        <action
+            android:id="@+id/action_wellnessHomeFragment_to_healthCheckupFragment"
+            app:destination="@id/healthCheckupFragment" />
+        <action
+            android:id="@+id/action_wellnessHomeFragment_to_membersFragment"
+            app:destination="@id/membersFragment" />
+        <action
+            android:id="@+id/action_wellnessHomeFragment_to_doctorPackagesExploreFragment"
+            app:destination="@id/doctorPackagesExploreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMemberFragment"
+        android:name="com.pinc.android.MB360.wellness.fragment.AddMemberFragment"
+        android:label="Add Member"
+        tools:layout="@layout/fragment_add_member" />
+    <fragment
+        android:id="@+id/prefDateFragment"
+        android:name="com.pinc.android.MB360.wellness.healthcheckup.PrefDateFragment"
+        android:label="Schedule Here"
+        tools:layout="@layout/fragment_pref_date">
+        <action
+            android:id="@+id/action_prefDateFragment_to_summaryFragment"
+            app:destination="@id/summaryFragment" />
+        <argument
+            android:name="getPackages"
+            app:argType="com.pinc.android.MB360.wellness.healthcheckuppackages.repository.responseclass.Packages" />
+        <argument
+            android:name="getPerson"
+            app:argType="com.pinc.android.MB360.wellness.healthcheckuppackages.repository.responseclass.Person" />
+        <argument
+            android:name="getDiagnosticCenter"
+            app:argType="com.pinc.android.MB360.wellness.healthcheckuppackages.repository.responseclass.DiagnosticCenter" />
+        <argument
+            android:name="isReschedule"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="isPaid"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="isOldApptInfoSrNo"
+            app:argType="string"/>
+
+
+        <action
+            android:id="@+id/action_prefDateFragment_to_healthCheckupFragment"
+            app:destination="@id/healthCheckupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/summaryFragment"
+        android:name="com.pinc.android.MB360.wellness.healthcheckup.SummaryFragment"
+        android:label="Summary"
+        tools:layout="@layout/fragment_summary" />
+    <fragment
+        android:id="@+id/packageDetailsFragment"
+        android:name="com.pinc.android.MB360.wellness.healthcheckup.PackageDetailsFragment"
+        android:label="Package Includes"
+        tools:layout="@layout/fragment_package_details">
+        <argument
+            android:name="getPackages"
+            app:argType="com.pinc.android.MB360.wellness.healthcheckuppackages.repository.responseclass.Packages" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.pinc.android.MB360.wellness.fragment.HistoryFragment"
+        android:label="History"
+        tools:layout="@layout/fragment_history" />
+
+    <fragment
+        android:id="@+id/ongoingFragment"
+        android:name="com.pinc.android.MB360.wellness.fragment.OngoingFragment"
+        android:label="Ongoing Appointments"
+        tools:layout="@layout/fragment_ongoing" >
+        <action
+            android:id="@+id/action_ongoingFragment_to_rescheduleFragment"
+            app:destination="@id/rescheduleFragment" />
+        <action
+            android:id="@+id/action_ongoingFragment_to_diagnosticFragment"
+            app:destination="@id/diagnosticFragment" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/rescheduleFragment"
+        android:name="com.pinc.android.MB360.wellness.fragment.RescheduleFragment"
+        android:label="Reschedule Appointments"
+        tools:layout="@layout/fragment_reschedule">
+
+        <argument
+            android:name="getRescheduleSummary"
+            app:argType="com.pinc.android.MB360.wellness.homehealthcare.responseclass.ScheduledSummary" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/overviewFragment"
+        android:name="com.pinc.android.MB360.wellness.healthcheckup.OverviewFragment"
+        android:label="Health Checkup"
+        tools:layout="@layout/fragment_overview" />
+    <fragment
+        android:id="@+id/overviewHealthcareFragment"
+        android:name="com.pinc.android.MB360.wellness.fragment.OverviewHealthcareFragment"
+        android:label="Overview"
+        tools:layout="@layout/fragment_overview_healthcare" />
+    <fragment
+        android:id="@+id/pretestreqFragment"
+        android:name="com.pinc.android.MB360.wellness.healthcheckup.PreTestReqFragment"
+        android:label="Health Checkup"
+        tools:layout="@layout/fragment_pre_test_req" >
+        <action
+            android:id="@+id/action_pretestreqFragment_to_ongoingFragment"
+            app:destination="@id/ongoingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tcFragment"
+        android:name="com.pinc.android.MB360.wellness.healthcheckup.TCFragment"
+        android:label="Health Checkup"
+        tools:layout="@layout/fragment_t_c" />
+
+    <fragment
+        android:id="@+id/diagnosticFragment"
+        android:name="com.pinc.android.MB360.wellness.healthcheckup.DiagnosticFragment"
+        android:label="Diagnostic"
+        tools:layout="@layout/fragment_diagnostic">
+        <action
+            android:id="@+id/action_diagnosticFragment_to_prefDateFragment"
+            app:destination="@id/prefDateFragment" />
+        <argument
+            android:name="getPackages"
+            app:argType="com.pinc.android.MB360.wellness.healthcheckuppackages.repository.responseclass.Packages" />
+        <argument
+            android:name="getPerson"
+            app:argType="com.pinc.android.MB360.wellness.healthcheckuppackages.repository.responseclass.Person" />
+        <argument
+            android:name="isReschedule"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="isPaid"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="isOldApptInfoSrNo"
+            app:argType="string"
+            android:defaultValue="false"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileWellnessFragment"
+        android:name="com.pinc.android.MB360.wellness.fragment.ProfileWellnessFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile_wellness" />
+    <fragment
+        android:id="@+id/citiesFragment"
+        android:name="com.pinc.android.MB360.wellness.healthcheckup.CitiesFragment"
+        android:label="Cities"
+        tools:layout="@layout/fragment_cities" >
+<!--        <action-->
+<!--            android:id="@+id/action_citiesFragment_to_membersFragment"-->
+<!--            app:destination="@id/membersFragment" />-->
+    </fragment>
+
+    <fragment
+        android:id="@+id/citiesFragmentHHC"
+        android:name="com.pinc.android.MB360.wellness.fragment.CitiesFragmentHHC"
+        android:label="Cities"
+        tools:layout="@layout/fragment_cities" >
+                <action
+                    android:id="@+id/action_citiesFragment_to_membersFragment"
+                    app:destination="@id/membersFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/healthCheckupFragment"
+        android:name="com.pinc.android.MB360.wellness.healthcheckup.HealthCheckupFragment"
+        android:label="Available Packages"
+        tools:layout="@layout/fragment_health_checkup">
+        <action
+            android:id="@+id/action_healthCheckupFragment_to_overviewFragment"
+            app:destination="@id/overviewFragment" />
+        <action
+            android:id="@+id/action_healthCheckupFragment_to_pretestreqFragment"
+            app:destination="@id/pretestreqFragment" />
+        <action
+            android:id="@+id/action_healthCheckupFragment_to_tcFragment"
+            app:destination="@id/tcFragment" />
+        <action
+            android:id="@+id/action_healthCheckupFragment_to_diagnosticFragment"
+            app:destination="@id/diagnosticFragment" />
+        <action
+            android:id="@+id/action_healthCheckupFragment_to_packageDetailsFragment"
+            app:destination="@id/packageDetailsFragment" />
+        <action
+            android:id="@+id/action_healthCheckupFragment_to_summaryFragment"
+            app:destination="@id/summaryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/trainedAttendedFragment"
+        android:name="com.pinc.android.MB360.wellness.fragment.TrainedAttendantFragment"
+        android:label="Trained Attendant"
+        tools:layout="@layout/fragment_trained_attended">
+        <argument
+            android:name="getMember"
+            app:argType="com.pinc.android.MB360.wellness.homehealthcare.responseclass.FamilyMember" />
+        <action
+            android:id="@+id/action_trainedAttendedFragment_to_homeHealthSummaryFragment"
+            app:destination="@id/homeHealthSummaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/LongTermFragment"
+        android:name="com.pinc.android.MB360.wellness.fragment.LongTermNursingFragment"
+        android:label="Long Term Nursing"
+        tools:layout="@layout/fragment_long_term_nursing">
+        <argument
+            android:name="getMember"
+            app:argType="com.pinc.android.MB360.wellness.homehealthcare.responseclass.FamilyMember" />
+        <action
+            android:id="@+id/action_LongTermFragment_to_homeHealthSummaryFragment"
+            app:destination="@id/homeHealthSummaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shortTermFragment"
+        android:name="com.pinc.android.MB360.wellness.fragment.ShortTermNursingFragment"
+        android:label="Short Term Nursing"
+        tools:layout="@layout/fragment_short_term_nursing">
+        <argument
+            android:name="getMember"
+            app:argType="com.pinc.android.MB360.wellness.homehealthcare.responseclass.FamilyMember" />
+        <action
+            android:id="@+id/action_shortTermFragment_to_homeHealthSummaryFragment"
+            app:destination="@id/homeHealthSummaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/diabetesManagementFragment"
+        android:name="com.pinc.android.MB360.wellness.fragment.DiabetesManagementFragment"
+        android:label="Diabeties Management"
+        tools:layout="@layout/fragment_diabetes_management">
+        <argument
+            android:name="getMember"
+            app:argType="com.pinc.android.MB360.wellness.homehealthcare.responseclass.FamilyMember" />
+        <action
+            android:id="@+id/action_diabetesManagementFragment_to_homeHealthSummaryFragment"
+            app:destination="@id/homeHealthSummaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/physiotherapyFragment"
+        android:name="com.pinc.android.MB360.wellness.fragment.PhysiotherapyFragment"
+        android:label="Physiotherapy"
+        tools:layout="@layout/fragment_physiotherapy">
+        <argument
+            android:name="getMember"
+            app:argType="com.pinc.android.MB360.wellness.homehealthcare.responseclass.FamilyMember" />
+        <action
+            android:id="@+id/action_physiotherapyFragment_to_homeHealthSummaryFragment"
+            app:destination="@id/homeHealthSummaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postNatalCareFragment"
+        android:name="com.pinc.android.MB360.wellness.fragment.PostNatalCareFragment"
+        android:label="Post Natal Care"
+        tools:layout="@layout/fragment_post_natal_care">
+        <argument
+            android:name="getMember"
+            app:argType="com.pinc.android.MB360.wellness.homehealthcare.responseclass.FamilyMember" />
+        <action
+            android:id="@+id/action_postNatalCareFragment_to_homeHealthSummaryFragment"
+            app:destination="@id/homeHealthSummaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/elderCareFragment"
+        android:name="com.pinc.android.MB360.wellness.fragment.ElderCareFragment"
+        android:label="Elder Care"
+        tools:layout="@layout/fragment_elder_care">
+        <argument
+            android:name="getMember"
+            app:argType="com.pinc.android.MB360.wellness.homehealthcare.responseclass.FamilyMember" />
+        <action
+            android:id="@+id/action_elderCareFragment_to_homeHealthSummaryFragment"
+            app:destination="@id/homeHealthSummaryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/doctorServicesFragment"
+        android:name="com.pinc.android.MB360.wellness.fragment.DoctorServicesFragment"
+        android:label="Doctor Services"
+        tools:layout="@layout/fragment_doctor_services">
+        <argument
+            android:name="getMember"
+            app:argType="com.pinc.android.MB360.wellness.homehealthcare.responseclass.FamilyMember" />
+        <action
+            android:id="@+id/action_doctorServicesFragment_to_homeHealthSummaryFragment"
+            app:destination="@id/homeHealthSummaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/membersFragment"
+        android:name="com.pinc.android.MB360.wellness.fragment.MembersFragment"
+        android:label="Select members"
+        tools:layout="@layout/fragment_members">
+        <action
+            android:id="@+id/action_membersFragment_to_trainedAttendedFragment"
+            app:destination="@id/trainedAttendedFragment" />
+        <action
+            android:id="@+id/action_membersFragment_to_addAddressFragment"
+            app:destination="@id/addAddressFragment" />
+        <action
+            android:id="@+id/action_membersFragment_to_LongTermFragment"
+            app:destination="@id/LongTermFragment" />
+        <action
+            android:id="@+id/action_membersFragment_to_shortTermFragment"
+            app:destination="@id/shortTermFragment" />
+        <action
+            android:id="@+id/action_membersFragment_to_physiotherapyFragment"
+            app:destination="@id/physiotherapyFragment" />
+        <action
+            android:id="@+id/action_membersFragment_to_postNatalCareFragment"
+            app:destination="@id/postNatalCareFragment" />
+        <action
+            android:id="@+id/action_membersFragment_to_elderCareFragment"
+            app:destination="@id/elderCareFragment" />
+        <action
+            android:id="@+id/action_membersFragment_to_doctorServicesFragment"
+            app:destination="@id/doctorServicesFragment" />
+        <action
+            android:id="@+id/action_membersFragment_to_citiesFragment"
+            app:destination="@id/citiesFragment"
+            app:popUpTo="@id/membersFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="getCity"
+            app:argType="com.pinc.android.MB360.wellness.homehealthcare.responseclass.City"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_membersFragment_to_diabetesManagementFragment"
+            app:destination="@id/diabetesManagementFragment" />
+        <action
+            android:id="@+id/action_membersFragment_to_overviewHealthcareFragment"
+            app:destination="@id/overviewHealthcareFragment" />
+        <action
+            android:id="@+id/action_membersFragment_to_citiesFragmentHHC"
+            app:destination="@id/citiesFragmentHHC" />
+
+
+    </fragment>
+    <fragment
+
+        android:id="@+id/addAddressFragment"
+        android:name="com.pinc.android.MB360.AddAddressFragment"
+        android:label="Add Address"
+        tools:layout="@layout/fragment_add_address">
+        <action
+            android:id="@+id/action_addAddressFragment_to_trainedAttendedFragment"
+            app:destination="@id/trainedAttendedFragment"
+            app:popUpTo="@id/membersFragment" />
+        <argument
+            android:name="getMember"
+            app:argType="com.pinc.android.MB360.wellness.homehealthcare.responseclass.FamilyMember" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/homeHealthSummaryFragment"
+        android:name="com.pinc.android.MB360.HomeHealthSummaryFragment"
+        android:label="Summary"
+        tools:layout="@layout/fragment_home_health_summary">
+        <action
+            android:id="@+id/action_homeHealthSummaryFragment_to_ongoingFragment"
+            app:destination="@id/ongoingFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/ongoingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorConsultantFragment"
+        android:name="com.pinc.android.MB360.DoctorConsultantFragment"
+        android:label="Doctor Consultant"
+        tools:layout="@layout/fragment_doctor_consultant" />
+    <fragment
+        android:id="@+id/doctorPackagesExploreFragment"
+        android:name="com.pinc.android.MB360.DoctorPackagesExploreFragment"
+        android:label="Explore Packages"
+        tools:layout="@layout/fragment_doctor_packages_explore" >
+        <action
+            android:id="@+id/action_doctorPackagesExploreFragment_to_doctorConsultantFragment"
+            app:destination="@id/doctorConsultantFragment" />
+    </fragment>
+
+
+</navigation>

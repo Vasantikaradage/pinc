@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/material_size_4">
+
+    <TextView
+        android:id="@+id/policy_inner_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/setpoppins_medium"
+        android:textAllCaps="true"
+        android:textColor="@color/label_color"
+        android:textStyle="bold"
+        tools:text="HEADER" />
+
+    <TextView
+        android:id="@+id/policy_inner_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/policy_inner_header"
+        android:fontFamily="@font/setpoppins_medium"
+        android:textColor="@color/text_color"
+        tools:text="DESCRIPTION" />
+
+
+</RelativeLayout>

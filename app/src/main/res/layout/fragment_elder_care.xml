@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    tools:context=".wellness.fragment.ElderCareFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/black_border"
+            android:backgroundTint="@color/white"
+            android:paddingTop="@dimen/cardLeftMargin"
+            android:paddingBottom="@dimen/cardLeftMargin">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/cardLeftMargin"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Selected Member"
+                android:textColor="@color/cpb_black"
+                android:textSize="@dimen/mediumTextSize"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dependantName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt1"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/cardLeftMargin"
+                android:fontFamily="@font/poppins_regular"
+                tools:text="Mr. Shree Ram" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtRelationAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dependantName"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/cardLeftMargin"
+                android:fontFamily="@font/poppins_regular"
+                tools:text="relation" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtRelationAge"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/cardLeftMargin"
+                android:fontFamily="@font/poppins_regular"
+                tools:text="Mumbai 400064" />
+
+        </RelativeLayout>
+
+        <!--    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/cardTopMargin"
+            android:layout_marginBottom="@dimen/cardLeftMargin"
+            android:animateLayoutChanges="true"
+            android:background="@drawable/black_border"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/elder_pack_header"
+                android:orientation="horizontal"
+                android:id="@+id/llHeader1"
+                android:weightSum="1">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.50"
+                    android:gravity="center"
+                    android:padding="@dimen/cardBottomMargin"
+                    android:text="Features"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtPackage1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cardBottomMargin"
+                    android:text="Portea Health Prime - Remote locations"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFeatureItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/cardMargin"
+                android:nestedScrollingEnabled="false"
+                tools:itemCount="3"
+                tools:listitem="@layout/elder_features_cell" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:padding="@dimen/cardMargin"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/cardMargin"
+                    android:layout_toLeftOf="@id/txtPrice"
+                    android:includeFontPadding="false"
+                    android:paddingLeft="@dimen/cardMargin"
+                    android:paddingTop="@dimen/cardMargin"
+                    android:paddingBottom="@dimen/cardMargin"
+                    android:text="Price starting from " />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingTop="@dimen/cardMargin"
+                    android:paddingRight="@dimen/cardMargin"
+                    android:paddingBottom="@dimen/cardMargin"
+                    android:text="Rs" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSelect"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtPrice"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="@dimen/cardMargin"
+                    android:layout_marginTop="@dimen/cardMargin"
+                    android:layout_marginEnd="@dimen/cardMargin"
+                    android:layout_marginBottom="@dimen/cardMargin"
+                    android:text="Get it Now" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llPAckage2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="@dimen/cardLeftMargin"
+            android:background="@drawable/black_border"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/elder_pack_header"
+                android:orientation="horizontal"
+                android:id="@+id/llHeader2"
+                android:weightSum="1">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.50"
+                    android:gravity="center"
+                    android:padding="@dimen/cardBottomMargin"
+                    android:text="Features"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtPackage2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/cardBottomMargin"
+                    android:text="Portea Health Prime - Remote locations"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMetroCititems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/cardMargin"
+                android:nestedScrollingEnabled="false"
+                tools:itemCount="3"
+                tools:listitem="@layout/elder_features_cell" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:padding="@dimen/cardMargin"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/cardMargin"
+                    android:paddingTop="@dimen/cardMargin"
+                    android:includeFontPadding="false"
+                    android:paddingBottom="@dimen/cardMargin"
+                    android:layout_toLeftOf="@id/txtPrice2"
+                    android:layout_marginLeft="@dimen/cardMargin"
+                    android:text="Price starting from" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtPrice2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingTop="@dimen/cardMargin"
+                    android:paddingRight="@dimen/cardMargin"
+                    android:paddingBottom="@dimen/cardMargin"
+                    android:text="Price" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSelect2"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtPrice2"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="@dimen/cardMargin"
+                    android:layout_marginTop="@dimen/cardMargin"
+                    android:layout_marginEnd="@dimen/cardMargin"
+                    android:layout_marginBottom="@dimen/cardMargin"
+                    android:text="Get it Now" />
+
+            </RelativeLayout>
+    </LinearLayout>    -->
+
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/elderCareCycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_elder_care"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

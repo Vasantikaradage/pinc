@@ -1,0 +1,28 @@
+{
+  "relations": [
+    {
+      "relation_name": "SPOUSE",
+      "max_count": 1,
+      "RelationID": "3",
+      "group": "1"
+    },
+    {
+      "relation_name": "SON",
+      "max_count": 2,
+      "RelationID": "3",
+      "group": "1"
+    },
+    {
+      "relation_name": "DAUGHTER",
+      "max_count": 2,
+      "RelationID": "4",
+      "group": "1"
+    },
+    {
+      "relation_name": "NO EMPLOYEE",
+      "max_count": 1,
+      "RelationID": "3",
+      "group": "2"
+    }
+  ]
+}

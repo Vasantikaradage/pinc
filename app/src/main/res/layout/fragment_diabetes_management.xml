@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".wellness.fragment.DiabetesManagementFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/black_border"
+        android:layout_marginBottom="@dimen/cardMargin"
+        android:paddingBottom="@dimen/cardMargin">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/cardLeftMargin"
+            android:layout_marginTop="@dimen/cardLeftMargin"
+            android:text="Selected Member"
+            android:textColor="@color/cpb_black"
+            android:textSize="@dimen/mediumTextSize"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dependantName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt1"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/cardLeftMargin"
+            android:text="Mr. Shree Ram" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtRelationAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dependantName"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/cardLeftMargin"
+            android:fontFamily="@font/poppins_regular"
+            tools:text="relation" />
+
+        <View
+            android:id="@+id/v1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:visibility="gone"
+            android:layout_below="@id/dependantName"
+            android:layout_marginTop="@dimen/cardMargin"
+            android:background="@color/grey1" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img1"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:visibility="gone"
+            android:layout_alignTop="@id/btnChangeDependant"
+            android:layout_alignBottom="@id/btnChangeDependant"
+            android:layout_marginLeft="@dimen/cardLeftMargin"
+            android:layout_alignParentLeft="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/back"
+            android:tint="@color/greendarkbg1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnChangeDependant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/v1"
+            android:visibility="gone"
+            android:layout_gravity="center_horizontal"
+            android:layout_toRightOf="@id/img1"
+            android:gravity="center"
+
+            android:padding="@dimen/cardMargin"
+            android:text="Change"
+            android:textColor="@color/greendarkbg1"
+            android:textSize="@dimen/mediumTextSize" />
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:padding="@dimen/cardLeftMargin"
+        android:layout_margin="@dimen/cardMargin"
+        android:background="@drawable/blue_border"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtMRP"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/cardMargin"
+            android:gravity="right"
+            android:text="MRP"
+            android:textColor="@color/cpb_black"
+            android:textSize="24dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/txtActualMRP" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtActualMRP"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:text="@string/strikeText"
+            android:textColor="@color/red"
+            android:textSize="24dp"
+
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/txtMRP"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/txtPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/txtMRP">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price for MyBenefits360 clients"
+                android:textColor="@color/cpb_black"
+                android:includeFontPadding="false"
+                android:textSize="@dimen/mediumTextSize" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/cardMargin"
+                android:text="1,999/-"
+                android:includeFontPadding="false"
+                android:textColor="@color/greencolorprimary"
+                android:textSize="@dimen/mediumTextSize" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtPrice">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/cardMargin"
+                android:gravity="center"
+                android:text="(Device + 45 testing strips free + Health coach for 1 year)"
+                android:textColor="@color/cpb_black"
+                android:textSize="@dimen/mediumTextSize"
+                />
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/cardMargin"
+                android:background="@color/grey1"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/cardMargin"
+                android:gravity="center"
+                android:text="This is a 1 year comprehensive, diabetes management program that includes"
+                android:textColor="@color/cpb_black"
+                android:textSize="@dimen/mediumTextSize"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/cardMargin"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="1 OneTouch Verio Flex Glucometer + Personal Health Coaching + 45 Strips"
+                android:textColor="@color/greenlightbg2"
+                android:textSize="@dimen/mediumTextSize"             />
+
+            <View android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/cardMargin"
+                android:background="@color/grey1"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/cardMargin"
+                android:gravity="center"
+                android:text="The objective of this program is to help you manage your diabetes by testing sugar levels, making the right food and lifestyle choices and working with your personal health coach to achieve your health goals. "
+                android:textColor="@color/cpb_black"
+                android:includeFontPadding="false"
+                android:textSize="@dimen/mediumTextSize"   />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="GET IT NOW!"
+                android:background="@color/greenlightbg2"
+                android:id="@+id/btnSchedule"
+                android:layout_marginTop="@dimen/cardMargin"
+                android:textColor="@color/white"
+                android:padding="@dimen/cardLeftMargin"/>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/completeView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/txtActualMRP" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

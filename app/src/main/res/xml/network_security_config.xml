@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">portal.mybenefits360.com</domain>
+        <domain includeSubdomains="true">wellness.mybenefits360.com</domain>
+        <domain includeSubdomains="true">core.mybenefits360.com</domain>
+        <domain includeSubdomains="true">aibemployeebenefits.in</domain>
+        <domain includeSubdomains="true">15.206.179.89</domain>
+        <domain includeSubdomains="true">grouphealth.staypinc.com</domain>
+        <domain includeSubdomains="true">grouphealth.pincinsurance.com</domain>
+    </domain-config>
+</network-security-config>
+

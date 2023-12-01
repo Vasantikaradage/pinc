@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/cardBottomMargin"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/cardMargin"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <RelativeLayout
+            android:id="@+id/progress_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/card_shadow"
+            android:elevation="@dimen/cardBottomMargin"
+            android:visibility="visible">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/greenlightbg2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/progress_bar"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/setpoppins_medium"
+                android:padding="5dp"
+                android:text="Loading..Please Wait" />
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/title_menu"
+            layout="@layout/title_menu_layout"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--            <View-->
+        <!--                android:id="@+id/view1"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="10dp"-->
+        <!--                android:layout_below="@id/title_menu"-->
+        <!--                android:background="#dddddd"-->
+        <!--                android:visibility="visible"-->
+        <!--                app:layout_constraintBottom_toBottomOf="@id/title_menu" />-->
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/wellness_dashboard_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/title_menu"
+            android:layout_marginTop="@dimen/cardBottomMargin"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/cardMargin"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            tools:listitem="@layout/item_wellness_dashboard" />
+
+        <TextView
+            android:id="@+id/message_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:textColor="@color/dark_grey"
+            android:visibility="visible" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

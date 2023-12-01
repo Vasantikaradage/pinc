@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginStart="@dimen/left_margin"
+    android:layout_marginEnd="@dimen/right_margin"
+    android:layout_marginBottom="@dimen/cardTopMargin">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/topup_background_select"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/completeView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="@dimen/cardMargin"
+            android:src="@drawable/edit"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/appCompatImageView"
+            app:layout_constraintEnd_toStartOf="@+id/lblEdit"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/right_margin"
+            android:gravity="right"
+            android:text="Edit"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/lblDelete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appCompatImageView"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="@dimen/cardMargin"
+            android:src="@drawable/delete"
+            app:layout_constraintBottom_toTopOf="@id/lblDelete"
+            app:layout_constraintLeft_toLeftOf="@id/lblDelete"
+            app:layout_constraintRight_toRightOf="@id/lblDelete"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/right_margin"
+            android:text="Delete"
+            android:textColor="@color/red"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appCompatImageView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/llChild1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:background="@drawable/familylayoutback"
+        android:baselineAligned="false"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/dependant_icon_back">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/addNewIcon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_add_1" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/relIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/cardTopMargin"
+                android:scaleType="centerInside"
+                android:src="@drawable/father"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relIcon"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/cardMargin"
+                android:layout_marginTop="@dimen/cardTopMargin"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="daughter"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:paddingStart="@dimen/left_margin"
+            android:paddingTop="@dimen/cardMargin"
+            android:paddingEnd="@dimen/right_margin"
+            android:paddingBottom="@dimen/cardMargin">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lblSampleRelation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/left_margin"
+                android:text="Spouse"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/cardMargin"
+                android:textColor="@color/white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@tools:sample/full_names" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivdiffdoc"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="@dimen/cardMargin"
+                android:background="@color/transparent"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_diff_doc"
+                android:visibility="gone"
+                app:layout_constraintRight_toLeftOf="@+id/ivdiff"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivdiff"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="@dimen/cardMargin"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="@dimen/cardMargin"
+                android:background="@color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_diffabled"
+                android:visibility="gone"
+                app:layout_constraintRight_toLeftOf="@+id/ivtwins"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivtwins"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="@dimen/cardMargin"
+                android:layout_marginBottom="@dimen/cardMargin"
+                android:background="@color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/twins_back"
+                android:visibility="gone"
+                app:layout_constraintRight_toLeftOf="@+id/rlDelete"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/etDOB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/cardMargin"
+                android:textColor="@color/white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etName"
+                tools:text="@tools:sample/date/mmddyy" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/etAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/cardMargin"
+                android:textColor="@color/white"
+                app:layout_constraintLeft_toRightOf="@id/etDOB"
+                app:layout_constraintTop_toBottomOf="@id/etName"
+                tools:text="@tools:sample/lorem" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/etPremium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/cardMargin"
+                android:text="8455"
+                android:textColor="#a4f700"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etAge" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/etPremiumText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="3dp"
+                android:paddingTop="7dp"
+                android:paddingRight="7dp"
+                android:paddingBottom="7dp"
+                android:text="Includes GST"
+                android:textColor="#a4f700"
+                android:textSize="14dp"
+                android:textStyle="italic"
+                android:visibility="gone"
+                app:layout_constraintLeft_toRightOf="@id/etPremium"
+                app:layout_constraintTop_toBottomOf="@id/etAge" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/etTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/cardMargin"
+                android:text="(includes GST)"
+                android:textColor="#a4f700"
+                android:textSize="10sp"
+                android:textStyle="italic"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/etPremium"
+                app:layout_constraintRight_toLeftOf="@id/rlSave"
+                app:layout_constraintStart_toEndOf="@+id/etPremium"
+                tools:text="@tools:sample/lorem" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/rlSave"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="@dimen/cardMargin"
+                android:layout_marginBottom="@dimen/cardMargin"
+                android:background="@color/transparent"
+                android:padding="2dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_pencil"
+                android:tint="@color/white"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/rlDelete"
+                app:layout_constraintTop_toBottomOf="@id/etAge" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/rlDelete"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="@dimen/cardMargin"
+                android:background="@color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/delete"
+                android:tint="@color/white"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etAge" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

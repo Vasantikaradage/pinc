@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="10dp"
+    android:background="@drawable/card_shadow"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <RelativeLayout
+        android:id="@+id/view_foreground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtName"
+            fontPath="font/poppins_medium.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="100dp"
+            android:text="Rajesh Kambali"
+            android:textColor="@color/textcolordark"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_packagenameorangeback"
+            android:layout_width="85dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="-5dp"
+            android:background="@drawable/ic_pricetag" />
+
+
+        <TextView
+            android:id="@+id/tvPackagenameorange"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="0dp"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:textColor="@color/white"
+            android:textSize="11.5sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="@dimen/cardMargin"
+            android:layout_below="@+id/txtName">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:layout_centerInParent="true"
+                android:background="@color/color_grey" />
+
+            <TextView
+                android:id="@+id/tvstatus"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/blank_rounded_background"
+                android:gravity="center"
+                android:minWidth="80dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="Scheduled"
+                android:textColor="@color/textcolorlightgrey"
+                android:textSize="11dp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvhospitalname"
+            fontPath="font/poppins_medium.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtName"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="15dp"
+            android:text="FORTIS HOSPITAL"
+            android:textColor="@color/textcolordark"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvhospitaladdress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvhospitalname"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
+            android:text="FORTIS HOSPITAL"
+            android:textColor="@color/textcolorlightgrey"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:id="@+id/llappconfirmed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/tvhospitaladdress"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/tvapponintment_refnonremarks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="15dp"
+                android:text="Appointment Reference No :- "
+                android:textColor="@color/textcolorblue"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/background_aptdone"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/tvappointmentdoneon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/textdarkgreen"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tvordernonpaymentmadeon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="3dp"
+                    android:text="Order No :- "
+                    android:textColor="@color/textcolorblue"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvrejectreason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/llappconfirmed"
+            android:layout_marginRight="15dp"
+            android:text="Rejection Reason :- "
+            android:textColor="@color/textred"
+            android:textSize="14sp"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/tvscheduledon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvrejectreason"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
+            android:text="SCHEDULED ON :- "
+            android:textColor="@color/textcolorblue"
+            android:textSize="14sp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/llscheduleapp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="7dp"
+            android:layout_below="@+id/tvscheduledon"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/background_scheapt"
+            android:minHeight="60dp"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:text="Date Preferrences :"
+                    android:textColor="@color/textcolorlightgrey"
+                    android:textSize="13dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvschedates"
+                            fontPath="font/roboto_regular.ttf"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="7dp"
+                            android:gravity="center_vertical"
+                            android:text="20/10/2019 08:11 AM"
+                            android:textColor="@color/textcolorlightgrey"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvappointmentdoneon1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:padding="5dp"
+                android:textColor="@color/textcolorlightgrey"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvpaymentnotdone"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/llscheduleapp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/background_paymentntdone"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Payment not made yet"
+            android:textColor="@color/textred"
+            android:textSize="13sp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_below="@+id/tvpaymentnotdone"
+            android:layout_marginTop="7dp"
+            android:background="@color/color_grey"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+        <LinearLayout
+            android:id="@+id/llreschedulecancel"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_below="@+id/view1"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/rescheduleLL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_rescdule_appt" />
+
+                <TextView
+                    android:id="@+id/btnreschedule"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="7dp"
+                    android:gravity="center_vertical"
+                    android:text="Reschedule"
+                    android:textColor="@color/textcolorblue"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.3dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/color_grey" />
+
+            <LinearLayout
+                android:id="@+id/cancelLL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_appt_cancel" />
+
+                <TextView
+                    android:id="@+id/btncancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="7dp"
+                    android:gravity="center_vertical"
+                    android:text="Cancel"
+                    android:textColor="@color/textred"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="3dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/statusschedule" />
+
+</FrameLayout>

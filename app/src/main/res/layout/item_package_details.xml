@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingPrefix"
+    android:layout_margin="7dp"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llarrow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvtest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:gravity="center_vertical"
+            android:textColor="@color/darkgrey"
+            android:layout_marginLeft="10dp"
+            fontPath="font/poppins_medium.ttf"
+            android:layout_weight="1"
+            android:text="Complete Blood Count"/>
+
+        <ImageView
+            android:id="@+id/iv_arrow"
+            android:layout_marginRight="@dimen/cardMargin"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center"
+            android:rotation="180"
+            android:src="@drawable/ic_plus1"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/iv_arrow_minus"
+            android:layout_marginRight="@dimen/cardMargin"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center"
+            android:rotation="180"
+            android:src="@drawable/ic_minus1"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvtestdetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/grey1"
+        android:layout_margin="10dp"
+        android:text="Complete Blood Count" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/color_grey"/>
+
+</LinearLayout>

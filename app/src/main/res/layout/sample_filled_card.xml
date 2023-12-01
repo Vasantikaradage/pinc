@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/DependantDetails"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/left_margin"
+    android:layout_marginTop="@dimen/cardMargin"
+    android:layout_marginEnd="@dimen/right_margin"
+    android:background="@drawable/constraintlayoutback">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/topup_background_select"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/Swipeablecard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:background="@drawable/constraintlayoutback"
+        android:baselineAligned="false"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/dependant_icon_back">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/relIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/cardTopMargin"
+                android:scaleType="centerInside"
+                android:src="@drawable/daughter"
+                android:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvType"
+                android:fontFamily="@font/setpoppins"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relIcon"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/cardTopMargin"
+                android:includeFontPadding="false"
+                android:text="daughter"
+                android:textColor="@color/white"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:paddingStart="@dimen/left_margin"
+            android:paddingTop="@dimen/cardMargin"
+            android:paddingEnd="@dimen/right_margin"
+            android:paddingBottom="@dimen/cardMargin">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lblSampleRelation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/left_margin"
+                android:text="Dependant"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/etName"
+                android:fontFamily="@font/setpoppins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/cardMargin"
+                android:text="Dependant 1"
+                android:textColor="@color/white"
+                android:visibility="visible"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@tools:sample/full_names" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/etDOB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/cardMargin"
+                android:fontFamily="@font/setpoppins"
+                android:textColor="@color/white"
+                android:visibility="visible"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etName"
+                tools:text="@tools:sample/date/mmddyy" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/etAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/cardMargin"
+                android:textColor="@color/white"
+                android:fontFamily="@font/setpoppins"
+                android:visibility="visible"
+                app:layout_constraintLeft_toRightOf="@id/etDOB"
+                app:layout_constraintTop_toBottomOf="@id/etName"
+                tools:text="@tools:sample/lorem" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/etPremium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/cardMargin"
+                android:text="8455"
+                android:textColor="#a4f700"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etAge" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/etTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/cardMargin"
+                android:text="(includes GST)"
+                android:textColor="#a4f700"
+                android:textSize="@dimen/textSize"
+                android:textStyle="italic"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/etPremium"
+                app:layout_constraintRight_toLeftOf="@id/rlSave"
+                app:layout_constraintStart_toEndOf="@+id/etPremium"
+                tools:text="@tools:sample/lorem" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/rlSave"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="@dimen/cardMargin"
+                android:background="@color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/edit"
+                android:tint="@color/white"
+                android:visibility="visible"
+                app:layout_constraintRight_toLeftOf="@+id/rlDelete"
+                app:layout_constraintTop_toBottomOf="@id/etAge" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/rlDelete"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="@dimen/cardMargin"
+                android:background="@color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/delete"
+                android:tint="@color/white"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etAge" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

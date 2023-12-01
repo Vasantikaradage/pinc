@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/cardMargin"
+    android:layout_marginTop="@dimen/cardMargin"
+    android:layout_marginRight="@dimen/cardMargin"
+    android:background="@drawable/card_shadow">
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/cardMargin"
+        android:background="@color/greenlightbg2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtDependantName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="{Name}"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtDependantAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="{Age}"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/rlAppointment"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toBottomOf="@id/txtDependantName">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_centerInParent="true"
+            android:background="@color/color_grey" />
+
+        <TextView
+            android:id="@+id/tvstatus"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/blank_rounded_background"
+            android:gravity="center"
+            android:minWidth="80dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="Scheduled"
+            android:textColor="@color/textcolorlightgrey"
+            android:textSize="11dp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llappconfirmed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/rlAppointment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/cardLeftMargin"
+            android:paddingTop="10dp"
+            android:paddingRight="@dimen/cardLeftMargin">
+
+            <TextView
+                android:id="@+id/txtAptReferencelabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Booking ID : "
+                android:textColor="@color/textcolorblue"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtAppointReference"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="fdvdfvdf"
+                android:textColor="@color/dark_black"
+                android:textSize="13sp"
+                app:layout_constraintStart_toEndOf="@+id/txtAptReferencelabel"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvRemarkslabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="left"
+                android:text="Remarks : "
+                android:textColor="@color/textcolorblue"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtAppointReference" />
+
+            <TextView
+                android:id="@+id/tvRemarks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:text=""
+                android:textColor="@color/grey1"
+                android:textSize="13sp"
+                app:layout_constraintStart_toEndOf="@+id/tvRemarkslabel"
+                app:layout_constraintTop_toBottomOf="@+id/txtAppointReference" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtAptScheduledlabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Scheduled On : "
+                android:textColor="@color/textcolorblue"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvRemarks" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtAppointmentScheduled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="dscsdfd"
+                android:textColor="@color/grey1"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/txtAptScheduledlabel"
+                app:layout_constraintStart_toEndOf="@+id/txtAptScheduledlabel"
+                app:layout_constraintTop_toTopOf="@+id/txtAptScheduledlabel" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.35" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/cardLeftMargin"
+            android:background="@drawable/background_aptdone1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/cardLeftMargin">
+
+            <TextView
+                android:id="@+id/tvappointmentdoneonlabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date Preference :  "
+                android:textColor="@color/grey1"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvappointmentdoneon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvappointmentdoneon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:text="ssddsfdfsf"
+                android:textColor="@color/grey1"
+                android:textSize="13sp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvappointmentdoneonlabel"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvDurationlabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Duration :  "
+                android:textColor="@color/grey1"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="@+id/tvappointmentdoneonlabel"
+                app:layout_constraintTop_toBottomOf="@+id/tvappointmentdoneon" />
+
+            <TextView
+                android:id="@+id/tvDuration"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="8dp"
+                android:ellipsize="end"
+                android:inputType="textMultiLine"
+                android:maxLines="2"
+                tools:text="cxcscdc"
+                android:textColor="@color/grey1"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/tvDurationlabel"
+                app:layout_constraintTop_toTopOf="@+id/tvDurationlabel" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutPricing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/cardLeftMargin"
+            android:layout_marginRight="@dimen/cardLeftMargin"
+            android:layout_marginBottom="@dimen/cardLeftMargin"
+            android:background="@drawable/background_aptdone1"
+            android:padding="@dimen/cardLeftMargin">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPackagePricelabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="Package Price :  "
+                android:textColor="@color/grey1"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPackagePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="10000"
+                android:textColor="@color/grey1"
+                android:textSize="13sp"
+                app:layout_constraintStart_toEndOf="@+id/tvPackagePricelabel"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTotalPricelabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:includeFontPadding="false"
+                android:text="Total Price :  "
+                android:textColor="@color/grey1"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPackagePricelabel" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTotalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="10000"
+                android:textColor="@color/grey1"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvTotalPricelabel"
+                app:layout_constraintStart_toEndOf="@+id/tvTotalPricelabel"
+                app:layout_constraintTop_toTopOf="@+id/tvTotalPricelabel" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_below="@+id/llappconfirmed"
+        android:layout_marginTop="7dp"
+        android:background="@color/color_grey"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/llappconfirmed" />
+
+    <LinearLayout
+        android:id="@+id/llreschedulecancel"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_below="@+id/view1"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/view1">
+
+        <LinearLayout
+            android:id="@+id/llReschedule"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_rescdule_appt" />
+
+            <TextView
+                android:id="@+id/btnreschedule"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="7dp"
+                android:gravity="center_vertical"
+                android:text="Change Dates"
+                android:textColor="@color/textcolorblue"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="0.3dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/color_grey" />
+
+        <LinearLayout
+            android:id="@+id/llCancelOrder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_appt_cancel" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="7dp"
+                android:gravity="center_vertical"
+                android:text="Cancel"
+                android:textColor="@color/textred"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

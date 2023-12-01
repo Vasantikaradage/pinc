@@ -1,0 +1,159 @@
+plugins {
+    id 'com.android.application'
+    id 'androidx.navigation.safeargs'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.pinc.android.MB360"
+        minSdk 26
+        targetSdk 33
+        versionCode 13
+        versionName "1.1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [MAPS_API_KEY: 'fake key']
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+
+    buildTypes {
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //firebase
+    implementation platform('com.google.firebase:firebase-bom:30.3.0')
+    //crashlytics and analytics
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-crashlytics'
+
+    //maps
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+
+    //new splash screen api
+    implementation 'androidx.core:core-splashscreen:1.0.0'
+
+    //swipe to refresh
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    //navigation
+    String nav_version = "2.5.3"
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
+    androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
+
+
+    //jsoup
+    implementation 'org.jsoup:jsoup:1.15.2'
+
+    //lottie
+    implementation "com.airbnb.android:lottie:5.2.0"
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-simplexml:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
+
+    //RxJava
+    implementation "io.reactivex.rxjava3:rxjava:3.1.4"
+
+    //ok http
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
+
+    //Glide Library for image loading
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
+
+    //lifecycle extensions
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    //otp retriever
+    implementation 'com.google.android.gms:play-services-auth:20.4.1'
+    implementation 'com.google.android.gms:play-services-auth-api-phone:18.0.1'
+
+    // date & calender
+    implementation 'com.aminography:primedatepicker:3.6.0'
+    implementation 'com.aminography:primecalendar:1.7.0'
+
+    // payment gateway
+    implementation 'com.razorpay:checkout:1.6.26'
+
+    // tooltip
+    implementation "com.github.skydoves:balloon:1.4.6"
+
+    //shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    //Room Database
+    def room_version = "2.5.0"
+    implementation "androidx.room:room-runtime:$room_version"
+
+    // optional - RxJava2 support for Room
+    implementation "androidx.room:room-rxjava2:$room_version"
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    // To use Kotlin annotation processing tool (kapt)
+    kapt "androidx.room:room-compiler:$room_version"
+
+    // To use Kotlin Symbol Processing (KSP)
+
+    //custom google tabs
+    implementation 'androidx.browser:browser:1.5.0-alpha01'
+
+    def work_version = "2.8.0"
+    // (Java only)
+    implementation "androidx.work:work-runtime:$work_version"
+
+    // optional - RxJava2 support
+    implementation "androidx.work:work-rxjava2:$work_version"
+
+    // optional - GCMNetworkManager support
+    implementation "androidx.work:work-gcm:$work_version"
+
+    // optional - Test helpers
+    androidTestImplementation "androidx.work:work-testing:$work_version"
+
+    // optional - Multiprocess support
+    implementation "androidx.work:work-multiprocess:$work_version"
+
+    //encryption of shared preferences
+    implementation "androidx.security:security-crypto:1.0.0"
+    implementation "androidx.security:security-identity-credential:1.0.0-alpha03"
+
+}

@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "204141175267",
+    "project_id": "pinc-insurance",
+    "storage_bucket": "pinc-insurance.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:204141175267:android:a85f9abe038a37606700d6",
+        "android_client_info": {
+          "package_name": "com.pinc.android.MB360"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "204141175267-p5tcghahlhthtsuobj0srp0874c3eigi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pinc.android.MB360",
+            "certificate_hash": "7425fbfdda635d9d6e112bd9370a5b8e4e38274f"
+          }
+        },
+        {
+          "client_id": "204141175267-qd83str8fesu13fokfcf4k208u5if2kf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4SMbN2NegFw-hAYLZtsk7J26UMploF08"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "204141175267-qd83str8fesu13fokfcf4k208u5if2kf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "204141175267-uv7cngmuihpcsj7jp9vnrpfje1vl2okp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "thynksight.pinc.MB360"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:204141175267:android:f074ead855c7a0f66700d6",
+        "android_client_info": {
+          "package_name": "com.pinctest.android.MB360"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "204141175267-qd83str8fesu13fokfcf4k208u5if2kf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4SMbN2NegFw-hAYLZtsk7J26UMploF08"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "204141175267-qd83str8fesu13fokfcf4k208u5if2kf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "204141175267-uv7cngmuihpcsj7jp9vnrpfje1vl2okp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "thynksight.pinc.MB360"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

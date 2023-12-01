@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_policy_header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/cardMargin"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="@dimen/cardMargin"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="@dimen/card_elevation">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/item_policy_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/policyHeight"
+            android:animateLayoutChanges="true"
+            android:background="@drawable/title_bg">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/item_policy_index"
+                android:layout_width="30dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/cardLeftMargin"
+                android:background="@drawable/badge_blue"
+                android:backgroundTint="@color/label_color"
+                android:fontFamily="@font/setpoppins"
+                android:gravity="center"
+                android:textColor="@color/cpb_white"
+                android:textSize="@dimen/mediumTextSize"
+                android:visibility="visible"
+                tools:text="1" />
+
+            <TextView
+                android:id="@+id/item_policy_main_header"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="55dp"
+                android:fontFamily="@font/setpoppins_medium"
+                android:gravity="center_vertical"
+                android:textAllCaps="true"
+                android:textColor="@color/label_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="Family Information" />
+
+            <ImageView
+                android:id="@+id/down_arrow_icon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:rotation="180"
+                android:scaleType="centerInside"
+                android:src="@drawable/arrow" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/inner_policy_details_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/layoutPadding"
+            android:visibility="visible">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/inner_policy_recycle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_inner_policy_feature" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".wellness.fragment.TrainedAttendantFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/black_border"
+                android:backgroundTint="@color/white"
+                android:paddingTop="@dimen/cardLeftMargin"
+                android:paddingBottom="@dimen/cardLeftMargin">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/cardLeftMargin"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Selected Member"
+                    android:textColor="@color/cpb_black"
+                    android:textSize="@dimen/mediumTextSize"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dependantName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt1"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/cardLeftMargin"
+                    android:fontFamily="@font/poppins_regular"
+                    tools:text="Mr. Shree Ram" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtRelationAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/dependantName"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/cardLeftMargin"
+                    android:fontFamily="@font/poppins_regular"
+                    tools:text="relation" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtRelationAge"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/cardLeftMargin"
+                    android:fontFamily="@font/poppins_regular"
+                    tools:text="Mumbai 400064" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/llHours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/black_border"
+                android:orientation="vertical"
+                android:padding="@dimen/cardMargin">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_horizontal"
+                    android:text="How many hours you want this service?"
+                    android:textSize="@dimen/mediumTextSize" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/cardMargin">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/btnTimetwelve"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="@dimen/cardMargin"
+                        android:layout_weight="1"
+                        android:background="@drawable/pkg_selection_wellness"
+                        android:gravity="center"
+                        android:text="12"
+                        android:textColor="@drawable/pkg_selection_text" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/btnTime24"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="@dimen/cardMargin"
+                        android:layout_weight="1"
+                        android:background="@drawable/pkg_selection_wellness"
+                        android:gravity="center"
+                        android:text="24"
+                        android:textColor="@drawable/pkg_selection_text" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llDuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/black_border"
+                android:orientation="vertical"
+                android:padding="@dimen/cardMargin">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/poppins_regular"
+                    android:includeFontPadding="false"
+                    android:text="Select Duration"
+                    android:textSize="@dimen/mediumTextSize" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/cardMargin">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/btnDaily"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="@dimen/cardMargin"
+                        android:layout_weight="1"
+                        android:background="@drawable/pkg_selection_wellness"
+                        android:gravity="center"
+                        android:text="Daily"
+                        android:textColor="@drawable/pkg_selection_text" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/btnMonthly"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="@dimen/cardMargin"
+                        android:layout_weight="1"
+                        android:background="@drawable/pkg_selection_wellness"
+                        android:gravity="center"
+                        android:text="Monthly"
+                        android:textColor="@drawable/pkg_selection_text" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llNursingAttendant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/black_border"
+                android:orientation="vertical"
+                android:padding="@dimen/cardMargin">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/poppins_regular"
+                    android:includeFontPadding="false"
+                    android:text="How many Nursing Attendants do you want?"
+                    android:textSize="@dimen/mediumTextSize" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/cardMargin">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/btnNursingCount1"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="@dimen/cardMargin"
+                        android:layout_weight="1"
+                        android:background="@drawable/pkg_selection_wellness"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="@drawable/pkg_selection_text" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/btnNursingCount2"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="@dimen/cardMargin"
+                        android:layout_weight="1"
+                        android:background="@drawable/pkg_selection_wellness"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textColor="@drawable/pkg_selection_text" />
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/monthPolicy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/cardLeftMargin"
+                    android:animateLayoutChanges="true"
+                    android:padding="@dimen/cardLeftMargin">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:includeFontPadding="false"
+                        android:text="Select Duration"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioGroup
+                        android:id="@+id/llRadios"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="@dimen/cardLeftMargin"
+                        android:layout_marginEnd="16dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        app:layout_constraintEnd_toEndOf="@+id/txtTitle"
+                        app:layout_constraintStart_toStartOf="@+id/txtTitle"
+                        app:layout_constraintTop_toBottomOf="@id/txtTitle">
+
+                        <androidx.appcompat.widget.AppCompatRadioButton
+                            android:id="@+id/radioMonth"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Month"
+                            android:textColor="@color/greenlightbg2" />
+
+                        <androidx.appcompat.widget.AppCompatRadioButton
+                            android:id="@+id/radioDates"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Date Range"
+                            android:textColor="@color/greenlightbg2" />
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:id="@+id/llMonthSelection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/cardLeftMargin"
+                        android:background="@drawable/green_border_round_corner"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/cardLeftMargin"
+                        app:layout_constraintEnd_toEndOf="@+id/txtTitle"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/txtTitle"
+                        app:layout_constraintTop_toBottomOf="@id/llRadios">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/cardMargin"
+                            android:text="Select Month"
+                            android:textColor="@color/greenlightbg2" />
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/rlMonthCount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/cardTopMargin"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/llRadios"
+                        android:visibility="gone">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtNoMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/cardMargin"
+                            android:text="No of month"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txtCount"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_toRightOf="@id/btnAdd"
+                            android:background="@drawable/green_border"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:padding="@dimen/cardMargin"
+                            android:text="1"
+                            app:layout_constraintEnd_toEndOf="@+id/txtNoMonth"
+                            app:layout_constraintStart_toStartOf="@+id/txtNoMonth"
+                            app:layout_constraintTop_toBottomOf="@+id/txtNoMonth" />
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/btnAdd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtNoMonth"
+                            android:layout_alignBottom="@+id/txtCount"
+                            android:layout_toRightOf="@id/txtNoMonth"
+                            android:background="@color/transparent"
+                            android:src="@drawable/ic_plus"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtCount"
+                            app:layout_constraintEnd_toEndOf="@+id/txtNoMonth"
+                            app:layout_constraintTop_toTopOf="@+id/txtCount" />
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/btnSubtract"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/txtCount"
+                            android:layout_alignBottom="@+id/txtCount"
+                            android:layout_toRightOf="@id/txtCount"
+                            android:background="@color/transparent"
+                            android:src="@drawable/ic_minus"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtCount"
+                            app:layout_constraintEnd_toStartOf="@+id/txtCount"
+                            app:layout_constraintStart_toStartOf="@+id/txtNoMonth"
+                            app:layout_constraintTop_toTopOf="@+id/txtCount" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtCount"
+                            android:layout_marginTop="@dimen/cardLeftMargin"
+                            android:padding="@dimen/cardMargin"
+                            android:text="Select from"
+                            app:layout_constraintEnd_toEndOf="@+id/btnAdd"
+                            app:layout_constraintStart_toStartOf="@+id/btnSubtract"
+                            app:layout_constraintTop_toBottomOf="@+id/txtCount" />
+
+                        <LinearLayout
+                            android:id="@+id/dateRange"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtView"
+                            android:layout_marginTop="@dimen/cardLeftMargin"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            app:layout_constraintTop_toBottomOf="@+id/txtView">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtFromDate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/cardMargin"
+                                android:layout_weight="1"
+                                android:background="@drawable/green_border_round_corner"
+                                android:gravity="center"
+                                android:padding="@dimen/cardMargin"
+                                android:text="Start Date" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtToDate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/cardMargin"
+                                android:layout_weight="1"
+                                android:background="@drawable/green_border_round_corner"
+                                android:gravity="center"
+                                android:padding="@dimen/cardMargin"
+                                android:text="End Date" />
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/mainDailyDateLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/date_header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginVertical="@dimen/material_size_12"
+                        android:text="Select Duration" />
+
+                    <RelativeLayout
+                        android:id="@+id/dailyDateLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/green_border_round_corner"
+                        android:padding="@dimen/cardLeftMargin"
+                        android:visibility="visible">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="@dimen/cardMargin"
+                            android:text="Select Dates"
+                            android:textColor="@color/greenlightbg2" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/datesCycle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/material_size_12"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="2"
+                    tools:listitem="@layout/dates_item" />
+
+            </LinearLayout>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnReview"
+                app:cardBackgroundColor="@color/greenlightbg2"
+                app:cardCornerRadius="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                  >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/poppinssemibold"
+                        android:text="Review"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".wellness.fragment.ShortTermNursingFragment"
+    android:background="@color/milkywhite">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/milkywhite"
+        android:orientation="vertical">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/black_border"
+    android:backgroundTint="@color/white"
+    android:paddingTop="@dimen/cardLeftMargin"
+    android:paddingBottom="@dimen/cardLeftMargin">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/cardLeftMargin"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Selected Member"
+        android:textColor="@color/cpb_black"
+        android:textSize="@dimen/mediumTextSize"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dependantName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt1"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/cardLeftMargin"
+        android:fontFamily="@font/poppins_regular"
+        tools:text="Mr. Shree Ram" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtRelationAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dependantName"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/cardLeftMargin"
+        android:fontFamily="@font/poppins_regular"
+        tools:text="relation" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtRelationAge"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/cardLeftMargin"
+        android:fontFamily="@font/poppins_regular"
+        tools:text="Mumbai 400064" />
+
+</RelativeLayout>
+
+<LinearLayout
+
+    android:id="@+id/llCategory"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/black_border"
+    android:orientation="vertical"
+    android:padding="@dimen/cardMargin">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Select the Category"
+        android:textColor="@color/black"
+        android:textSize="@dimen/mediumTextSize"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="70dp"
+        android:orientation="horizontal"
+        android:padding="@dimen/cardMargin">
+
+        <TextView
+            android:id="@+id/btnSpecializedNurseProdures"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/cardMargin"
+            android:layout_weight="1"
+            android:background="@drawable/pkg_selection_wellness"
+            android:gravity="center"
+            android:text="Specialized Nursing Procedures"
+            android:textColor="@drawable/pkg_selection_text" />
+
+        <TextView
+            android:id="@+id/btnAsciticTapping"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/cardMargin"
+            android:layout_weight="1"
+            android:background="@drawable/pkg_selection_wellness"
+            android:gravity="center"
+            android:text="Ascitic Tapping"
+            android:textColor="@drawable/pkg_selection_text" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnPeritonealDialysis"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/cardMargin"
+            android:layout_weight="1"
+            android:background="@drawable/pkg_selection_wellness"
+            android:gravity="center"
+            android:text="Peritoneal Dialysis"
+            android:textColor="@drawable/pkg_selection_text"
+            android:visibility="visible" />
+    </LinearLayout>
+
+
+</LinearLayout>
+
+    <!-- this is daily date layout -->
+    <LinearLayout
+        android:id="@+id/dateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/black_border">
+
+        <TextView
+            android:id="@+id/date_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="@dimen/material_size_12"
+            android:text="Select Duration" />
+
+        <RelativeLayout
+            android:id="@+id/dailyDateLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/green_border_round_corner"
+            android:padding="@dimen/cardLeftMargin"
+            android:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Select Dates"
+                android:textColor="@color/greenlightbg2" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtDate1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/text_color" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:background="@color/background"
+            android:layout_marginTop="10dp"/>
+
+
+
+    </LinearLayout>
+
+<Button
+    android:id="@+id/btnReview"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginBottom="20dp"
+    android:background="@drawable/roundedsquare_green"
+    android:text="Review"
+    android:textColor="@color/white" />
+
+</LinearLayout>
+</RelativeLayout>

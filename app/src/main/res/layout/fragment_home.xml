@@ -1,0 +1,977 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context="com.pinc.android.MB360.insurance.HomeFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:animateLayoutChanges="true"
+        android:paddingBottom="@dimen/material_size_16">
+
+
+        <RelativeLayout
+            android:id="@+id/content_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:animateLayoutChanges="true"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/material_size_16">
+
+
+            <include
+                android:id="@+id/title_menu"
+                layout="@layout/title_menu_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_below="@id/title_menu"
+                android:background="#dddddd"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/title_menu" />
+
+            <!-- Enrollment Window card -->
+
+            <View
+                android:id="@+id/view_start"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_alignParentTop="@id/policy_selection_layout_holder"
+                android:background="#dddddd"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/title_menu" />
+
+            <LinearLayout
+                android:id="@+id/policy_selection_layout_holder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view_start"
+                android:orientation="vertical">
+
+                <!--  <include
+                      android:id="@+id/tabs"
+                      layout="@layout/view_pager_tab_layout"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_margin="@dimen/material_size_12" />
+                  <RelativeLayout
+                      android:id="@+id/spinner_holder"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="@dimen/cardLeftMargin"
+                      android:layout_marginRight="@dimen/cardLeftMargin"
+                      android:layout_marginBottom="@dimen/material_size_12"
+                      android:background="@drawable/spinnerbackground">
+
+                      <TextView
+                          android:id="@+id/policy_selection_text"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginStart="@dimen/material_size_6"
+                          android:layout_marginTop="@dimen/material_size_6"
+                          android:layout_marginEnd="@dimen/material_size_6"
+                          android:layout_marginBottom="@dimen/material_size_6"
+                          android:layout_toStartOf="@id/change_image_policy"
+                          android:fontFamily="@font/setpoppinssemibold"
+                          android:textColor="@color/grey1"
+                          android:textSize="15sp" />
+
+                      <ImageView
+                          android:id="@+id/change_image_policy"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_alignParentEnd="true"
+                          android:layout_centerVertical="true"
+                          android:layout_marginEnd="@dimen/material_size_8"
+                          android:src="@drawable/ic_drop_down"
+                          app:tint="@color/grey1" />
+
+                  </RelativeLayout>-->
+
+                <LinearLayout
+                    android:id="@+id/policy_selection_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/title_menu"
+                    android:layout_marginHorizontal="7dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/material_size_6"
+                    android:weightSum="6">
+
+                    <!-- CHIP POLICY -->
+                    <RelativeLayout
+                        android:id="@+id/select_policy_chip"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="@dimen/material_size_2"
+                        android:layout_marginVertical="@dimen/material_size_6"
+                        android:layout_weight="3"
+                        android:background="@drawable/chips_background"
+                        android:padding="@dimen/material_size_4">
+
+                        <TextView
+                            android:id="@+id/selected_policy_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerInParent="true"
+                            android:drawablePadding="@dimen/material_size_2"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/setpoppins"
+                            android:maxLines="1"
+                            android:textColor="@color/label_color"
+                            app:drawableStartCompat="@drawable/ic_sort"
+                            tools:text="Filter: POLICY NUMBER" />
+
+                    </RelativeLayout>
+
+                    <!-- CHIP GHI -->
+                    <RelativeLayout
+                        android:id="@+id/ghi_chip"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="@dimen/material_size_2"
+                        android:layout_marginVertical="@dimen/material_size_6"
+                        android:layout_weight="1"
+                        android:background="@drawable/chips_background_selected"
+                        android:padding="@dimen/material_size_6">
+
+                        <TextView
+                            android:id="@+id/ghi_chip_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/setpoppins"
+                            android:text="GHI" />
+
+                    </RelativeLayout>
+                    <!-- CHIP GPA -->
+                    <RelativeLayout
+                        android:id="@+id/gpa_chip"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="@dimen/material_size_2"
+                        android:layout_marginVertical="@dimen/material_size_6"
+                        android:layout_weight="1"
+                        android:background="@drawable/chips_background"
+                        android:padding="@dimen/material_size_6">
+
+                        <TextView
+                            android:id="@+id/gpa_chip_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/setpoppins"
+                            android:text="GPA" />
+
+                    </RelativeLayout>
+                    <!-- CHIP GTL -->
+                    <RelativeLayout
+                        android:id="@+id/gtl_chip"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="@dimen/material_size_2"
+                        android:layout_marginVertical="@dimen/material_size_6"
+                        android:layout_weight="1"
+                        android:background="@drawable/chips_background"
+                        android:padding="@dimen/material_size_6">
+
+                        <TextView
+                            android:id="@+id/gtl_chip_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/setpoppins"
+                            android:text="GTL" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_below="@id/policy_selection_layout_holder"
+                android:background="#dddddd"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/title_menu" />
+
+            <LinearLayout
+                android:id="@+id/cardEnrollment_window"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view3"
+                android:layout_marginHorizontal="7dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="7dp"
+                android:background="@drawable/card_shadow"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view3">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/ecard_back">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/clock_enroll"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentBottom="true"
+                        android:alpha="0.2"
+                        android:paddingEnd="10dp"
+                        android:scaleX="1.77"
+                        android:scaleY="1.77"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:srcCompat="@drawable/ic_clock_01" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/enrollmsg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="@dimen/cardLeftMargin"
+                        android:layout_marginEnd="@dimen/cardLeftMargin"
+                        android:fontFamily="@font/setpoppins_medium"
+                        android:text="Enrollment Window"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/largeTextSize"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/enrollment_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/enrollmsg"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="@dimen/cardLeftMargin"
+                        android:fontFamily="@font/setpoppins_medium"
+                        android:includeFontPadding="false"
+                        android:text="CLOSED"
+                        android:textColor="@color/white"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/enrollmsg" />
+
+                    <LinearLayout
+                        android:id="@+id/day_count_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/material_size_12"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/daycount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/setpoppins_medium"
+                            android:includeFontPadding="false"
+                            android:text="00"
+                            android:textColor="@color/white"
+                            android:textSize="80sp"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/days_left"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/setpoppins_medium"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:letterSpacing="0.2"
+                            android:text="Days Left"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/textSize"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="@id/daycount"
+                            app:layout_constraintLeft_toLeftOf="@+id/daycount"
+                            app:layout_constraintRight_toRightOf="@+id/daycount" />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/dependant_image"
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/cardLeftMargin"
+                        android:src="@drawable/enrollment_white"
+                        android:visibility="gone"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/bottomtxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="@dimen/cardLeftMargin"
+                        android:fontFamily="@font/setpoppins_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="Add Dependant"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/textSize"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/add_dependant_image"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="@dimen/cardMargin"
+                        android:layout_marginTop="@dimen/cardMargin"
+                        android:layout_marginBottom="12dp"
+                        android:layout_toEndOf="@+id/bottomtxt"
+                        android:src="@drawable/add_white"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/bottomtxt" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_below="@id/cardEnrollment_window"
+                android:background="#dddddd"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/title_menu" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/dashboard_cycle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/view2"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="3"
+                tools:listitem="@layout/item_dashboard" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_below="@id/dashboard_cycle"
+                android:layout_marginTop="@dimen/material_size_12" />
+
+            <!-- <LinearLayout
+                 android:id="@+id/menu_holder_layout"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/view2"
+                 android:orientation="vertical">
+                 &lt;!&ndash;First Menu View &ndash;&gt;
+                 <LinearLayout
+                     android:id="@+id/layout_top"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="horizontal"
+                     android:weightSum="2">
+
+                     &lt;!&ndash;My Coverages &ndash;&gt;
+                     <com.google.android.material.card.MaterialCardView
+                         android:id="@+id/My_Coverages_Card"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="@dimen/cardLeftMargin"
+                         android:layout_marginTop="@dimen/cardLeftMargin"
+                         android:layout_marginEnd="@dimen/cardMargin"
+                         android:layout_marginBottom="@dimen/cardLeftMargin"
+                         android:layout_weight="1"
+                         app:cardCornerRadius="5dp"
+                         app:cardElevation="@dimen/material_size_8"
+                         app:layout_constraintLeft_toLeftOf="parent"
+                         app:layout_constraintRight_toRightOf="@id/guideline2"
+                         app:layout_constraintTop_toBottomOf="@id/view2"
+                         app:strokeColor="@color/light_grey"
+                         app:strokeWidth="0.8dp">
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginStart="@dimen/cardMargin"
+                             android:layout_marginTop="@dimen/cardLeftMargin"
+                             android:layout_marginBottom="@dimen/cardLeftMargin"
+                             android:orientation="horizontal">
+
+                             <androidx.appcompat.widget.AppCompatImageView
+                                 android:id="@+id/imgExpandable"
+                                 android:layout_width="35dp"
+                                 android:layout_height="35dp"
+                                 android:layout_gravity="center_vertical"
+                                 app:srcCompat="@drawable/ic_my_coverage"
+                                 app:tint="@color/icon_color" />
+
+                             <LinearLayout
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:layout_marginStart="5dp"
+                                 android:orientation="vertical">
+
+                                 <androidx.appcompat.widget.AppCompatTextView
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+                                     android:fontFamily="@font/setpoppinssemibold"
+                                     android:text="@string/my_coverages"
+                                     android:textColor="@color/label_color"
+                                     android:textSize="@dimen/textSize" />
+
+                                 <androidx.appcompat.widget.AppCompatTextView
+                                     android:id="@+id/txtRelations"
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+                                     android:layout_marginEnd="4dp"
+                                     android:ellipsize="end"
+                                     android:fontFamily="@font/setpoppins_medium"
+                                     android:includeFontPadding="false"
+                                     android:maxLines="1"
+                                     android:textColor="@color/dark_grey"
+                                     android:textSize="@dimen/textSize"
+                                     android:visibility="gone"
+                                     tools:text="Employee" />
+
+                                 <include
+                                     android:id="@+id/txtRelationShimmer"
+                                     layout="@layout/single_line_text_view_shimmer"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="12dp"
+                                     android:layout_marginTop="@dimen/material_size_2"
+                                     android:layout_marginEnd="@dimen/material_size_12"
+                                     android:visibility="visible" />
+
+                             </LinearLayout>
+                         </LinearLayout>
+                     </com.google.android.material.card.MaterialCardView>
+
+
+                     &lt;!&ndash;Network Hospital &ndash;&gt;
+                     <com.google.android.material.card.MaterialCardView
+                         android:id="@+id/Network_Hospital_Card"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="@dimen/cardMargin"
+                         android:layout_marginTop="@dimen/cardLeftMargin"
+                         android:layout_marginEnd="@dimen/cardLeftMargin"
+                         android:layout_marginBottom="@dimen/cardLeftMargin"
+                         android:layout_weight="1"
+                         app:cardCornerRadius="5dp"
+                         app:cardElevation="@dimen/material_size_8"
+                         app:layout_constraintLeft_toRightOf="@id/guideline2"
+                         app:layout_constraintRight_toRightOf="parent"
+                         app:layout_constraintTop_toBottomOf="@id/view2"
+                         app:strokeColor="@color/light_grey"
+                         app:strokeWidth="0.8dp">
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginStart="@dimen/cardMargin"
+                             android:layout_marginTop="@dimen/cardLeftMargin"
+                             android:layout_marginBottom="@dimen/cardLeftMargin"
+                             android:orientation="horizontal">
+
+                             <androidx.appcompat.widget.AppCompatImageView
+                                 android:layout_width="35dp"
+                                 android:layout_height="35dp"
+                                 android:layout_gravity="center_vertical"
+                                 app:srcCompat="@drawable/ic_provider_network"
+                                 app:tint="@color/gradient_start" />
+
+                             <LinearLayout
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="match_parent"
+                                 android:layout_marginStart="@dimen/cardMargin"
+                                 android:orientation="vertical">
+
+                                 <androidx.appcompat.widget.AppCompatTextView
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+                                     android:fontFamily="@font/setpoppinssemibold"
+                                     android:text="@string/provider_network"
+                                     android:textColor="@color/label_color"
+                                     android:textSize="@dimen/textSize" />
+
+                                 <androidx.appcompat.widget.AppCompatTextView
+                                     android:id="@+id/txthospCount"
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+                                     android:fontFamily="@font/setpoppins_medium"
+                                     android:includeFontPadding="false"
+                                     android:text="0 Hospitals"
+                                     android:textColor="@color/dark_grey"
+                                     android:textSize="@dimen/textSize"
+                                     android:visibility="gone" />
+
+                                 <include
+                                     android:id="@+id/txthospCountShimmer"
+                                     layout="@layout/single_line_text_view_shimmer"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="12dp"
+                                     android:layout_marginTop="@dimen/material_size_2"
+                                     android:layout_marginEnd="@dimen/material_size_12"
+                                     android:visibility="visible" />
+                             </LinearLayout>
+                         </LinearLayout>
+                     </com.google.android.material.card.MaterialCardView>
+
+
+                 </LinearLayout>
+
+                 &lt;!&ndash;Second Menu View &ndash;&gt;
+                 <LinearLayout
+                     android:id="@+id/layoutMiddle"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="horizontal"
+                     android:weightSum="2">
+
+                     &lt;!&ndash;My Claims &ndash;&gt;
+                     <com.google.android.material.card.MaterialCardView
+                         android:id="@+id/My_Claim_Card"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="@dimen/cardLeftMargin"
+                         android:layout_marginEnd="@dimen/cardMargin"
+                         android:layout_marginBottom="@dimen/cardLeftMargin"
+                         android:layout_weight="1"
+                         app:cardCornerRadius="5dp"
+                         app:cardElevation="@dimen/material_size_8"
+                         app:layout_constraintLeft_toLeftOf="parent"
+                         app:layout_constraintRight_toLeftOf="@id/guideline2"
+                         app:layout_constraintTop_toBottomOf="@id/Network_Hospital_Card"
+                         app:strokeColor="@color/title_back"
+                         app:strokeWidth="0.5dp">
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginStart="@dimen/cardMargin"
+                             android:layout_marginTop="@dimen/cardLeftMargin"
+                             android:layout_marginBottom="@dimen/cardLeftMargin"
+                             android:orientation="horizontal">
+
+                             <androidx.appcompat.widget.AppCompatImageView
+                                 android:layout_width="35dp"
+                                 android:layout_height="35dp"
+                                 android:layout_gravity="center_vertical"
+                                 app:srcCompat="@drawable/ic_my_claims"
+                                 app:tint="@color/gradient_start" />
+
+                             <LinearLayout
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:layout_marginStart="@dimen/cardMargin"
+                                 android:orientation="vertical">
+
+                                 <androidx.appcompat.widget.AppCompatTextView
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+                                     android:fontFamily="@font/setpoppinssemibold"
+                                     android:text="@string/my_claims"
+                                     android:textColor="@color/label_color"
+                                     android:textSize="@dimen/textSize" />
+
+                                 <androidx.appcompat.widget.AppCompatTextView
+                                     android:id="@+id/txtClaimCount"
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+                                     android:fontFamily="@font/setpoppins_medium"
+                                     android:includeFontPadding="false"
+                                     android:text="0 Claims"
+                                     android:textColor="@color/dark_grey"
+                                     android:textSize="@dimen/textSize"
+                                     android:visibility="gone" />
+
+                                 <include
+                                     android:id="@+id/txtClaimCountShimmer"
+                                     layout="@layout/single_line_text_view_shimmer"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="12dp"
+                                     android:layout_marginTop="@dimen/material_size_2"
+                                     android:layout_marginEnd="@dimen/material_size_12"
+                                     android:visibility="visible" />
+                             </LinearLayout>
+                         </LinearLayout>
+                     </com.google.android.material.card.MaterialCardView>
+
+                     &lt;!&ndash;My Query&ndash;&gt;
+                     <com.google.android.material.card.MaterialCardView
+                         android:id="@+id/My_Query_Card"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="@dimen/cardMargin"
+                         android:layout_marginEnd="@dimen/cardLeftMargin"
+                         android:layout_marginBottom="@dimen/cardLeftMargin"
+                         android:layout_weight="1"
+                         app:cardCornerRadius="5dp"
+                         app:cardElevation="@dimen/material_size_8"
+                         app:layout_constraintLeft_toRightOf="@id/guideline2"
+                         app:layout_constraintRight_toRightOf="parent"
+                         app:layout_constraintTop_toBottomOf="@id/Network_Hospital_Card"
+                         app:strokeColor="@color/light_grey"
+                         app:strokeWidth="0.8dp">
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginStart="@dimen/cardMargin"
+                             android:layout_marginTop="@dimen/cardLeftMargin"
+                             android:layout_marginBottom="@dimen/cardLeftMargin"
+                             android:orientation="horizontal">
+
+                             <androidx.appcompat.widget.AppCompatImageView
+                                 android:layout_width="35dp"
+                                 android:layout_height="37dp"
+                                 android:layout_gravity="center_vertical"
+                                 app:srcCompat="@drawable/ic_my_query"
+                                 app:tint="@color/gradient_start" />
+
+                             <LinearLayout
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:layout_marginStart="@dimen/cardMargin"
+                                 android:orientation="vertical">
+
+                                 <androidx.appcompat.widget.AppCompatTextView
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+                                     android:fontFamily="@font/setpoppinssemibold"
+                                     android:text="@string/my_queries"
+                                     android:textColor="@color/label_color"
+                                     android:textSize="@dimen/textSize" />
+
+                                 <androidx.appcompat.widget.AppCompatTextView
+                                     android:id="@+id/query_count"
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+                                     android:fontFamily="@font/setpoppins_medium"
+                                     android:includeFontPadding="false"
+                                     android:text="0 Queries"
+                                     android:textColor="@color/dark_grey"
+                                     android:textSize="@dimen/textSize"
+                                     android:visibility="gone" />
+
+                                 <include
+                                     android:id="@+id/query_count_shimmer"
+                                     layout="@layout/single_line_text_view_shimmer"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="12dp"
+                                     android:layout_marginTop="@dimen/material_size_2"
+                                     android:layout_marginEnd="@dimen/material_size_12"
+                                     android:visibility="visible" />
+
+                             </LinearLayout>
+
+
+                         </LinearLayout>
+
+                     </com.google.android.material.card.MaterialCardView>
+
+                 </LinearLayout>
+
+                 &lt;!&ndash;Third Menu View &ndash;&gt;
+                 <LinearLayout
+                     android:id="@+id/layout_bottom"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="horizontal"
+                     android:weightSum="3">
+
+                     &lt;!&ndash;Claim Procedures &ndash;&gt;
+                     <com.google.android.material.card.MaterialCardView
+                         android:id="@+id/Claim_Procedures_Card"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="@dimen/cardLeftMargin"
+                         android:layout_marginEnd="@dimen/cardMargin"
+                         android:layout_marginBottom="18dp"
+                         android:layout_weight="1"
+                         app:cardCornerRadius="5dp"
+                         app:cardElevation="@dimen/material_size_8"
+                         app:strokeColor="@color/light_grey"
+                         app:strokeWidth="0.8dp">
+
+                         <LinearLayout
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center"
+                             android:layout_weight="1"
+                             android:gravity="center"
+                             android:orientation="vertical">
+
+                             <androidx.appcompat.widget.AppCompatImageView
+                                 android:id="@+id/imgEcard"
+                                 android:layout_width="35dp"
+                                 android:layout_height="35dp"
+                                 android:layout_marginTop="@dimen/cardMargin"
+                                 app:layout_constraintLeft_toRightOf="@+id/imgPC"
+                                 app:layout_constraintTop_toBottomOf="@id/My_Claim_Card"
+                                 app:srcCompat="@drawable/ic_claim_procedures"
+                                 app:tint="@color/gradient_start" />
+
+                             <androidx.appcompat.widget.AppCompatTextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="match_parent"
+                                 android:layout_marginTop="@dimen/cardMargin"
+                                 android:layout_marginBottom="@dimen/cardMargin"
+                                 android:fontFamily="@font/setpoppinssemibold"
+                                 android:gravity="center"
+                                 android:includeFontPadding="false"
+                                 android:text="Claim \nProcedures"
+                                 android:textColor="@color/label_color"
+                                 android:textSize="@dimen/textSize" />
+                         </LinearLayout>
+                     </com.google.android.material.card.MaterialCardView>
+
+                     &lt;!&ndash;Intimate Claims &ndash;&gt;
+                     <com.google.android.material.card.MaterialCardView
+                         android:id="@+id/Intimate_Claim"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_marginLeft="@dimen/cardMargin"
+                         android:layout_marginRight="@dimen/cardMargin"
+                         android:layout_marginBottom="@dimen/cardMargin"
+                         android:layout_weight="1"
+                         android:orientation="vertical"
+                         app:cardCornerRadius="5dp"
+                         app:cardElevation="@dimen/material_size_8"
+                         app:strokeColor="@color/light_grey"
+                         app:strokeWidth="0.8dp">
+
+                         <LinearLayout
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center"
+                             android:gravity="center"
+                             android:orientation="vertical">
+
+                             <androidx.appcompat.widget.AppCompatImageView
+                                 android:layout_width="35dp"
+                                 android:layout_height="35dp"
+                                 android:layout_marginTop="@dimen/cardMargin"
+                                 app:srcCompat="@drawable/ic_intimate_claim"
+                                 app:tint="@color/gradient_start" />
+
+                             <androidx.appcompat.widget.AppCompatTextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:layout_marginTop="@dimen/cardMargin"
+                                 android:layout_marginBottom="@dimen/cardMargin"
+                                 android:fontFamily="@font/setpoppinssemibold"
+                                 android:gravity="center"
+                                 android:includeFontPadding="false"
+                                 android:text="Intimate\nClaim"
+                                 android:textColor="@color/label_color"
+                                 android:textSize="@dimen/textSize" />
+                         </LinearLayout>
+                     </com.google.android.material.card.MaterialCardView>
+
+                     &lt;!&ndash;Policy Features &ndash;&gt;
+                     <com.google.android.material.card.MaterialCardView
+                         android:id="@+id/Policy_Features_Card"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="@dimen/cardMargin"
+                         android:layout_marginEnd="@dimen/cardLeftMargin"
+                         android:layout_marginBottom="@dimen/cardMargin"
+                         android:layout_weight="1"
+                         app:cardCornerRadius="5dp"
+                         app:cardElevation="@dimen/material_size_8"
+                         app:strokeColor="@color/light_grey"
+                         app:strokeWidth="0.8dp">
+
+                         <LinearLayout
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center"
+                             android:layout_weight="1"
+                             android:gravity="center"
+                             android:orientation="vertical">
+
+                             <androidx.appcompat.widget.AppCompatImageView
+                                 android:id="@+id/imgPC"
+                                 android:layout_width="35dp"
+                                 android:layout_height="35dp"
+                                 android:layout_marginTop="@dimen/cardMargin"
+                                 android:scaleType="fitCenter"
+                                 app:srcCompat="@drawable/ic_policy_features"
+                                 app:tint="@color/gradient_start" />
+
+                             <androidx.appcompat.widget.AppCompatTextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:layout_marginTop="@dimen/cardMargin"
+                                 android:layout_marginBottom="@dimen/cardMargin"
+                                 android:fontFamily="@font/setpoppinssemibold"
+                                 android:gravity="center"
+                                 android:includeFontPadding="false"
+                                 android:text="Policy\nFeatures"
+                                 android:textColor="@color/label_color"
+                                 android:textSize="@dimen/textSize" />
+                         </LinearLayout>
+                     </com.google.android.material.card.MaterialCardView>
+
+                 </LinearLayout>
+
+                 &lt;!&ndash;Fourth Menu View &ndash;&gt;
+                 <LinearLayout
+                     android:id="@+id/layout_fourth"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="horizontal"
+                     android:weightSum="3">
+
+                     &lt;!&ndash;FAQ &ndash;&gt;
+                     <com.google.android.material.card.MaterialCardView
+                         android:id="@+id/faq_card"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="@dimen/cardLeftMargin"
+                         android:layout_marginEnd="@dimen/cardMargin"
+                         android:layout_marginBottom="18dp"
+                         android:layout_weight="0.92"
+                         app:cardCornerRadius="5dp"
+                         app:cardElevation="@dimen/material_size_8"
+                         app:strokeColor="@color/light_grey"
+                         app:strokeWidth="0.8dp">
+
+                         <LinearLayout
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center"
+                             android:layout_weight="1"
+                             android:gravity="center"
+                             android:orientation="vertical">
+
+                             <androidx.appcompat.widget.AppCompatImageView
+                                 android:id="@+id/faq_iamge"
+                                 android:layout_width="35dp"
+                                 android:layout_height="35dp"
+                                 android:layout_marginTop="@dimen/cardMargin"
+                                 app:layout_constraintLeft_toRightOf="@+id/imgPC"
+                                 app:layout_constraintTop_toBottomOf="@id/My_Claim_Card"
+                                 app:srcCompat="@drawable/ic_faq"
+                                 app:tint="@color/gradient_start" />
+
+                             <androidx.appcompat.widget.AppCompatTextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="match_parent"
+                                 android:layout_marginTop="@dimen/cardMargin"
+                                 android:layout_marginBottom="@dimen/cardMargin"
+                                 android:fontFamily="@font/setpoppinssemibold"
+                                 android:gravity="center"
+                                 android:includeFontPadding="false"
+                                 android:text="@string/faqs"
+                                 android:textColor="@color/label_color"
+                                 android:textSize="@dimen/textSize" />
+                         </LinearLayout>
+                     </com.google.android.material.card.MaterialCardView>
+
+                 </LinearLayout>
+
+
+             </LinearLayout>-->
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/progress_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="@drawable/progress_bar_overlay"
+            android:visibility="gone">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:elevation="@dimen/cardBottomMargin"
+                android:visibility="visible"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="@dimen/card_elevation"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/material_size_12">
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:indeterminateTint="@color/cpb_blue" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/progress_bar"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/setpoppins_medium"
+                        android:padding="5dp"
+                        android:text="Loading..Please Wait" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/home_shimmer"
+            layout="@layout/home_fragment_shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="2dp"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
